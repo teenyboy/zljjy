@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自贡市就业服务中心</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../static/css/swiper/swiper.min.css">
+    <link rel="stylesheet" href="../../static/css/default.css">
+    <link rel="stylesheet" href="../../static/css/jquerymobile/jquery.mobile-1.4.5.min.css">
+
+    <script src="../../static/js/swiper/swiper.min.js"></script>
+    <script src="../../static/js/jquery/jquery-1.8.0.min.js"></script>
+    <script src="../../static/js/jquerymobile/jquery.mobile-1.4.5.js"></script>
+
+</head>
+<body>
+
+<div data-role="page" id="indexPage">
+
+    <div data-role="header">
+        <h1 style="margin: 0%">自贡市自流井区就业服务管理局</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <!-- Required swiper-lazy class and image source specified in data-src attribute -->
+                    <img src="../../static/img/other/timg.jpg">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../../static/img/other/timg.jpg">
+                </div>
+
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination swiper-pagination-white"></div>
+            <!-- Navigation -->
+            <div class="swiper-button-next swiper-button-white"></div>
+            <div class="swiper-button-prev swiper-button-white"></div>
+        </div>
+
+        <div class="ui-grid-a" style="margin-top: 20px">
+            <div class="ui-block-a">
+                <a href="#policyIntro" class="ui-shadow ui-btn ui-corner-all ui-mini ui-icon-home ui-btn-icon-top">政策介绍</a>
+            </div>
+            <div class="ui-block-b">
+                <a href="#policyIntro" class="ui-shadow ui-btn ui-corner-all ui-mini ui-icon-info ui-btn-icon-top">办事指南</a>
+                <!--<div class="ui-btn ui-input-btn ui-corner-all ui-shadow ui-icon-info ui-btn-icon-top">办事指南<input-->
+                        <!--type="button" id="guideAffairs" data-icon="info" data-iconpos="top"></div>-->
+            </div>
+        </div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <a href="#policyIntro" class="ui-shadow ui-btn ui-corner-all ui-mini ui-icon-heart ui-btn-icon-top">就业之窗</a>
+                <!--<div class="ui-btn ui-input-btn ui-corner-all ui-shadow ui-icon-heart ui-btn-icon-top">就业之窗<input-->
+                        <!--type="button" id="windowEmploy" data-icon="heart" data-iconpos="top"></div>-->
+            </div>
+            <div class="ui-block-b">
+                <a href="#policyIntro" class="ui-shadow ui-btn ui-corner-all ui-mini ui-icon-grid ui-btn-icon-top">新闻动态</a>
+                <!--<div class="ui-btn ui-input-btn ui-corner-all ui-shadow ui-icon-grid ui-btn-icon-top">新闻动态<input-->
+                        <!--type="button" id="newsInfo" data-icon="grid" data-iconpos="top"></div>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div data-role="page" id="policyIntro">
+    <div data-role="header">
+        <h1 style="margin: 0%">自贡市自流井区就业服务管理局</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <ul data-role="listview" data-inset="true">
+            <li><a href="#" >
+                <img src="../../static/img/other/timg.jpg">
+                <h2>这是一个列表1</h2>
+                <p>这是一个列表1ss</p>
+            </a></li>
+            <li><a href="#" >
+                <img src="../../static/img/other/timg.jpg">
+                <h2>这是一个列表2</h2>
+                <p>这是一个列表2ss</p>
+            </a></li>
+            <li><a href="#" >
+                <img src="../../static/img/other/timg.jpg">
+                <h2>这是一个列表3</h2>
+                <p>这是一个列表3ss</p>
+            </a></li>
+            <li><a href="#" >
+                <img src="../../static/img/other/timg.jpg">
+                <h2>这是一个列表3</h2>
+                <p>这是一个列表3ss</p>
+            </a></li>
+            <li><a href="#" >
+                <img src="../../static/img/other/timg.jpg">
+                <h2>这是一个列表3</h2>
+                <p>这是一个列表3ss</p>
+            </a></li>
+            <li><a href="#" >
+                <img src="../../static/img/other/timg.jpg">
+                <h2>这是一个列表3</h2>
+                <p>这是一个列表3ss</p>
+            </a></li>
+            <li><a href="#" >
+                <img src="../../static/img/other/timg.jpg">
+                <h2>这是一个列表3</h2>
+                <p>这是一个列表3ss</p>
+            </a></li>
+            <li><a href="#" >
+                <img src="../../static/img/other/timg.jpg">
+                <h2>这是一个列表3</h2>
+                <p>这是一个列表3ss</p>
+            </a></li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- Initialize Swiper -->
+<script type="text/javascript">
+    var swiper = new Swiper('.swiper-container', {
+        // Enable lazy loading
+        auto: true,
+        autoplay: {
+            delay: 3000,
+            stopOnLastSlide: false,
+            disableOnInteraction: true
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+        }
+    });
+
+
+
+</script>
+</body>
+</html>
