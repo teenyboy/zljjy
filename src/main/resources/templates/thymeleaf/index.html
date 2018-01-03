@@ -12,6 +12,7 @@
     <script th:src="@{/js/jquery/jquery-1.8.0.min.js}"></script>
     <script th:src="@{/js/jquerymobile/jquery.mobile-1.4.5.js}"></script>
 
+    <script th:src="@{/js/web/policy.js}"></script>
 </head>
 <body>
 
@@ -22,7 +23,7 @@
     </div>
 
     <div data-role="main" class="ui-content">
-        <div class="swiper-container">
+        <div class="swiper-container"><w></w>
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <!-- Required swiper-lazy class and image source specified in data-src attribute -->
@@ -76,46 +77,11 @@
     </div>
 
     <div data-role="main" class="ui-content">
-        <ul data-role="listview" data-inset="true">
+        <ul data-role="listview" id="policiesList" data-inset="true">
             <li><a href="#">
                 <img src="/images/other/timg.jpg"/>
                 <h2>这是一个列表1</h2>
                 <p>这是一个列表1ss</p>
-            </a></li>
-            <li><a href="#">
-                <img src="/images/other/timg.jpg"/>
-                <h2>这是一个列表2</h2>
-                <p>这是一个列表2ss</p>
-            </a></li>
-            <li><a href="#">
-                <img src="/images/other/timg.jpg"/>
-                <h2>这是一个列表3</h2>
-                <p>这是一个列表3ss</p>
-            </a></li>
-            <li><a href="#">
-                <img src="./images/other/timg.jpg"/>
-                <h2>这是一个列表3</h2>
-                <p>这是一个列表3ss</p>
-            </a></li>
-            <li><a href="#">
-                <img src="/images/other/timg.jpg"/>
-                <h2>这是一个列表3</h2>
-                <p>这是一个列表3ss</p>
-            </a></li>
-            <li><a href="#">
-                <img src="/images/other/timg.jpg"/>
-                <h2>这是一个列表3</h2>
-                <p>这是一个列表3ss</p>
-            </a></li>
-            <li><a href="#">
-                <img src="/images/other/timg.jpg"/>
-                <h2>这是一个列表3</h2>
-                <p>这是一个列表3ss</p>
-            </a></li>
-            <li><a href="#">
-                <img src="/images/other/timg.jpg"/>
-                <h2>这是一个列表3</h2>
-                <p>这是一个列表3ss</p>
             </a></li>
         </ul>
     </div>
@@ -142,6 +108,15 @@
         }
     });
 
+    $(document).on("pagecreate","#policyIntro",function () {
+        $.ajax({
+            url:"/policy/queryPolicy",
+            success:function (data) {
+                console.log(data);
+                POLICY.queryPolicy();
+            }
+        })
+    });
 
 </script>
 </body>

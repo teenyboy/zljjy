@@ -1,8 +1,9 @@
 package com.wh.zljjy.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Policy {
+public class Policy implements Serializable{
     private Long id;
 
     private String imgPath;

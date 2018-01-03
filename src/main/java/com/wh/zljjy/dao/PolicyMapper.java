@@ -1,7 +1,12 @@
 package com.wh.zljjy.dao;
 
 import com.wh.zljjy.domain.Policy;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
+
+@Mapper
 public interface PolicyMapper {
     int deleteByPrimaryKey(Long id);
 
@@ -14,4 +19,7 @@ public interface PolicyMapper {
     int updateByPrimaryKeySelective(Policy record);
 
     int updateByPrimaryKey(Policy record);
+
+    @Select("SELECT * FROM policy limit 10")
+    List<Policy> getPolicies();
 }
