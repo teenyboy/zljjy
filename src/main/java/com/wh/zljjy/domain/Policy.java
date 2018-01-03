@@ -2,7 +2,11 @@ package com.wh.zljjy.domain;
 
 import java.util.Date;
 
-public class Policy extends PolicyKey {
+public class Policy {
+    private Long id;
+
+    private String imgPath;
+
     private String content;
 
     private String abbre;
@@ -16,6 +20,22 @@ public class Policy extends PolicyKey {
     private String updatePerson;
 
     private Byte yn;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getImgPath() {
+        return imgPath;
+    }
+
+    public void setImgPath(String imgPath) {
+        this.imgPath = imgPath == null ? null : imgPath.trim();
+    }
 
     public String getContent() {
         return content;

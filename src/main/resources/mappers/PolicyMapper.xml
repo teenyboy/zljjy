@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.wh.zljjy.dao.PolicyMapper" >
+<mapper namespace="dao.PolicyMapper" >
   <resultMap id="BaseResultMap" type="com.wh.zljjy.domain.Policy" >
     <id column="id" property="id" jdbcType="BIGINT" />
-    <id column="img_path" property="imgPath" jdbcType="VARCHAR" />
+    <result column="img_path" property="imgPath" jdbcType="VARCHAR" />
     <result column="content" property="content" jdbcType="VARCHAR" />
     <result column="abbre" property="abbre" jdbcType="VARCHAR" />
-    <result column="create_time" property="createTime" jdbcType="DATE" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="create_person" property="createPerson" jdbcType="VARCHAR" />
-    <result column="update_time" property="updateTime" jdbcType="DATE" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
     <result column="update_person" property="updatePerson" jdbcType="VARCHAR" />
     <result column="yn" property="yn" jdbcType="TINYINT" />
   </resultMap>
@@ -16,17 +16,15 @@
     id, img_path, content, abbre, create_time, create_person, update_time, update_person, 
     yn
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.wh.zljjy.domain.PolicyKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
     from policy
     where id = #{id,jdbcType=BIGINT}
-      and img_path = #{imgPath,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.wh.zljjy.domain.PolicyKey" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from policy
     where id = #{id,jdbcType=BIGINT}
-      and img_path = #{imgPath,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.wh.zljjy.domain.Policy" >
     insert into policy (id, img_path, content, 
@@ -34,8 +32,8 @@
       update_time, update_person, yn
       )
     values (#{id,jdbcType=BIGINT}, #{imgPath,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
-      #{abbre,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, #{createPerson,jdbcType=VARCHAR}, 
-      #{updateTime,jdbcType=DATE}, #{updatePerson,jdbcType=VARCHAR}, #{yn,jdbcType=TINYINT}
+      #{abbre,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{createPerson,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{updatePerson,jdbcType=VARCHAR}, #{yn,jdbcType=TINYINT}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.wh.zljjy.domain.Policy" >
@@ -83,13 +81,13 @@
         #{abbre,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
-        #{createTime,jdbcType=DATE},
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="createPerson != null" >
         #{createPerson,jdbcType=VARCHAR},
       </if>
       <if test="updateTime != null" >
-        #{updateTime,jdbcType=DATE},
+        #{updateTime,jdbcType=TIMESTAMP},
       </if>
       <if test="updatePerson != null" >
         #{updatePerson,jdbcType=VARCHAR},
@@ -102,6 +100,9 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.wh.zljjy.domain.Policy" >
     update policy
     <set >
+      <if test="imgPath != null" >
+        img_path = #{imgPath,jdbcType=VARCHAR},
+      </if>
       <if test="content != null" >
         content = #{content,jdbcType=VARCHAR},
       </if>
@@ -109,13 +110,13 @@
         abbre = #{abbre,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
-        create_time = #{createTime,jdbcType=DATE},
+        create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="createPerson != null" >
         create_person = #{createPerson,jdbcType=VARCHAR},
       </if>
       <if test="updateTime != null" >
-        update_time = #{updateTime,jdbcType=DATE},
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
       <if test="updatePerson != null" >
         update_person = #{updatePerson,jdbcType=VARCHAR},
@@ -125,18 +126,17 @@
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
-      and img_path = #{imgPath,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.wh.zljjy.domain.Policy" >
     update policy
-    set content = #{content,jdbcType=VARCHAR},
+    set img_path = #{imgPath,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
       abbre = #{abbre,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=DATE},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
       create_person = #{createPerson,jdbcType=VARCHAR},
-      update_time = #{updateTime,jdbcType=DATE},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
       update_person = #{updatePerson,jdbcType=VARCHAR},
       yn = #{yn,jdbcType=TINYINT}
     where id = #{id,jdbcType=BIGINT}
-      and img_path = #{imgPath,jdbcType=VARCHAR}
   </update>
 </mapper>

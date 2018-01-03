@@ -10,7 +10,7 @@ public class IndexController {
 
     @RequestMapping(value = "/")
     public String index(){
-        return "templates/thymeleaf/index";
+        return "thymeleaf/index";
     }
 
 
