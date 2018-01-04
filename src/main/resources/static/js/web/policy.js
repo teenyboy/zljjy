@@ -8,9 +8,9 @@ var POLICY = window.NameSpace || {};
                console.log(data);
                for(var i = 0;i<data.length;i++){
                    var policyHtml ='<li><a href=\"#\"><img src=\"'+data[i].imgPath+'\"/><h2>'+data[i].abbre+'</h2> <p>'+data[i].content+'</p></a></li>';
-                   $("#queryPolicy").append(policyHtml);
+                   $("#policiesList").append(policyHtml);
                }
-               $('#queryPolicy').listview('refresh');
+               $('#policiesList').listview('refresh');
            }
        })
    }

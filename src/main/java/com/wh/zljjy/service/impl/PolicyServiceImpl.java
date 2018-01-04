@@ -16,6 +16,6 @@ public class PolicyServiceImpl implements PolicyService {
 
     @Override
     public List<Policy> queryPolicies() {
-        return policyMapper.getPolicies();
+        return policyMapper.queryPolicies();
     }
 }

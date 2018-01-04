@@ -1,5 +1,6 @@
 package com.wh.zljjy.dao;
 
+
 import com.wh.zljjy.domain.Policy;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -20,6 +21,6 @@ public interface PolicyMapper {
 
     int updateByPrimaryKey(Policy record);
 
-    @Select("SELECT * FROM policy limit 10")
-    List<Policy> getPolicies();
+    @Select("select * from policy limit 10")
+    List<Policy> queryPolicies();
 }
